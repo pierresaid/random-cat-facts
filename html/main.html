@@ -12,12 +12,12 @@
     function fetchFact(e) {
         e.preventDefault();
         const text = document.getElementById("text");
-        // text.textContent = 'Loading ...';
-        // fetch("https://cat-fact.herokuapp.com/facts/random").then(res => res.json()).then(res => {
-        //     text.textContent = res.text
-        // }).catch(error => {
-        //     text.textContent = "An error happened 😿";
-        // })
+        text.textContent = 'Loading ...';
+        fetch("https://cat-fact.herokuapp.com/facts/random").then(res => res.json()).then(res => {
+            text.textContent = res.text
+        }).catch(error => {
+            text.textContent = "An error happened 😿";
+        })
     };
     if (window.addEventListener) window.addEventListener("load", fetchFact, false);
     else if (window.attachEvent) window.attachEvent("onload", fetchFact);
