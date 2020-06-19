@@ -1,0 +1,84 @@
+<div class="main">
+    <h1 class="rainbow">Random Cat Facts ! 😺</h1>
+    <p id="text">
+        Loading ...
+    </p>
+    <form onsubmit="fetchFact(event)">
+        <button type="submit">Get another one</button>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function fetchFact(e) {
+        e.preventDefault();
+        const text = document.getElementById("text");
+        // text.textContent = 'Loading ...';
+        // fetch("https://cat-fact.herokuapp.com/facts/random").then(res => res.json()).then(res => {
+        //     text.textContent = res.text
+        // }).catch(error => {
+        //     text.textContent = "An error happened 😿";
+        // })
+    };
+    if (window.addEventListener) window.addEventListener("load", fetchFact, false);
+    else if (window.attachEvent) window.attachEvent("onload", fetchFact);
+    else window.onload = fetchFacts;
+</script>
+
+<style>
+    html {
+        height: 100%;
+        font-family: 'Sriracha', cursive;
+    }
+
+    body {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 100%;
+        text-align: center;
+    }
+
+    body,
+    .main {
+        background: #f7f7ee;
+        color: #393e46;
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+        body,
+        .main {
+            background: #182952;
+            color: white;
+        }
+    }
+
+    .main {
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    p {
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 81px;
+    }
+
+    button {
+        background: #E71D36;
+    }
+
+    button:hover {
+        background: #E71D36;
+    }
+
+    button {
+        transition: ease 0.2s;
+    }
+</style>
