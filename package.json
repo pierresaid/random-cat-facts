@@ -1,18 +1,23 @@
 {
-  "name": " ",
+  "name": "random-cat-facts",
   "version": "0.0.1",
   "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "keywords": [
+    "random",
+    "cat",
+    "facts"
+  ],
+  "license": "MIT",
+  "author": "pierre said",
   "scripts": {
-    "build": "parcel build index.html",
+    "build": "parcel build index.html && workbox injectManifest workbox-config.js",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
-    "posthtml-include": "^1.4.3"
+    "posthtml-include": "^1.4.3",
+    "workbox-cli": "^5.1.3"
   }
 }
