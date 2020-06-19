@@ -8,7 +8,6 @@
 
 <script type="text/javascript">
     fetchFact = function () {
-        console.log("ALO");
         const text = document.getElementById("text");
         text.textContent = 'Loading ...';
         fetch("https://cat-fact.herokuapp.com/facts/random").then(res => res.json()).then(res => {
