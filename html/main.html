@@ -3,11 +3,12 @@
     <p id="text">
         Loading ...
     </p>
-    <button onclick="fetchFact()">Get another one</button>
+    <button onclick="window.fetchFact()" type="submit">Get another one</button>
 </div>
 
 <script type="text/javascript">
-    function fetchFact() {
+    fetchFact = function () {
+        console.log("ALO");
         const text = document.getElementById("text");
         text.textContent = 'Loading ...';
         fetch("https://cat-fact.herokuapp.com/facts/random").then(res => res.json()).then(res => {
@@ -19,6 +20,8 @@
     if (window.addEventListener) window.addEventListener("load", fetchFact, false);
     else if (window.attachEvent) window.attachEvent("onload", fetchFact);
     else window.onload = fetchFacts;
+
+    window.fetchFact = fetchFact;
 </script>
 
 <style>
