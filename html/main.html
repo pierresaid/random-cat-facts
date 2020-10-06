@@ -7,13 +7,20 @@
 </div>
 
 <script type="text/javascript">
+    displayFact = function (textElement, text) {
+        setTimeout(() => {
+            textElement.style.opacity = '1';
+            textElement.textContent = text
+        }, 250);
+    };
+
     fetchFact = function () {
         const text = document.getElementById("text");
-        text.textContent = 'Loading ...';
+        text.style.opacity = '0';
         fetch("https://cat-fact.herokuapp.com/facts/random").then(res => res.json()).then(res => {
-            text.textContent = res.text
+            displayFact(text, res.text);
         }).catch(error => {
-            text.textContent = "An error happened 😿";
+            displayFact(text, "An error happened 😿");
         })
     };
     if (window.addEventListener) window.addEventListener("load", fetchFact, false);
@@ -67,6 +74,7 @@
         padding-left: 20px;
         padding-right: 20px;
         min-height: 81px;
+        transition: opacity 0.25s ease;
     }
 
     button {
