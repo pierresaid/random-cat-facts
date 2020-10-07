@@ -23,9 +23,24 @@
             displayFact(text, "An error happened 😿");
         })
     };
-    if (window.addEventListener) window.addEventListener("load", fetchFact, false);
-    else if (window.attachEvent) window.attachEvent("onload", fetchFact);
-    else window.onload = fetchFacts;
+
+    handleSpaceBar = function() {
+      if (event.keyCode === 32) {
+          fetchFact()
+      }
+    }
+
+    if (window.addEventListener) { 
+      window.addEventListener("load", fetchFact, false);
+      window.addEventListener('keyup', handleSpaceBar)
+    }
+    else if (window.attachEvent) {
+      window.attachEvent("onload", fetchFact);
+      window.attachEvent('keyup', handleSpaceBar)
+    }
+    else {
+      window.onload = fetchFacts;
+    }
 
     window.fetchFact = fetchFact;
 </script>
