@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "io.github.pierresaid.randomcatfacts",
+                   "sha256_cert_fingerprints": ["F1:1A:6B:54:3A:EE:EF:00:A2:08:34:4C:4E:D3:5A:DA:77:E5:86:F3:B9:23:6E:46:6B:36:07:2C:73:EC:F5:C3"] }
+    }]
